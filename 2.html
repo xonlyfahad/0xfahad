@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أنواع المعادن وأهميتها</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 5px solid #fbc531;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #fff, #ffeaa7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        header p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .intro {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 2px solid #ffeaa7;
+        }
+        
+        .intro h2 {
+            color: #e17055;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #fd79a8;
+            font-size: 2.2rem;
+            text-align: center;
+        }
+        
+        .intro-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .intro-text {
+            flex: 1;
+            color: #2d3436;
+        }
+        
+        .intro-image {
+            flex: 1;
+            height: 300px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(116, 185, 255, 0.4);
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        
+        .classification {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 2px solid #a29bfe;
+        }
+        
+        .classification h2 {
+            color: #6c5ce7;
+            margin-bottom: 35px;
+            text-align: center;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .mineral-types {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .mineral-card {
+            flex: 1 1 350px;
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-top: 5px solid #ffeaa7;
+            transition: all 0.3s ease;
+            color: white;
+        }
+        
+        .mineral-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mineral-card.silicates {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            border-top: 5px solid #fab1a0;
+        }
+        
+        .mineral-card.non-silicates {
+            background: linear-gradient(135deg, #00cec9 0%, #00b894 100%);
+            border-top: 5px solid #81ecec;
+        }
+        
+        .mineral-card h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .mineral-card ul {
+            list-style-type: none;
+            padding-right: 15px;
+        }
+        
+        .mineral-card li {
+            margin-bottom: 12px;
+            padding-right: 25px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .mineral-card li:before {
+            content: "💎";
+            position: absolute;
+            right: 0;
+            font-size: 1.2rem;
+        }
+        
+        .sub-types {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(255,255,255,0.5);
+        }
+        
+        .sub-types h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .properties {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 2px solid #55efc4;
+        }
+        
+        .properties h2 {
+            color: #00b894;
+            margin-bottom: 35px;
+            text-align: center;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .property-card {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(116, 185, 255, 0.3);
+            transition: all 0.3s ease;
+            color: white;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-5px) rotate(2deg);
+            box-shadow: 0 8px 20px rgba(116, 185, 255, 0.5);
+        }
+        
+        .property-card h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .property-card p {
+            color: #dfe6e9;
+            line-height: 1.8;
+        }
+        
+        .mohs-scale {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 2px solid #ffeaa7;
+        }
+        
+        .mohs-scale h2 {
+            color: #fdcb6e;
+            margin-bottom: 35px;
+            text-align: center;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .scale-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .scale-table th,
+        .scale-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .scale-table th {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .scale-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .scale-table tr:nth-child(odd) {
+            background-color: white;
+        }
+        
+        .scale-table tr:hover {
+            background-color: #e3f2fd;
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+        }
+        
+        .importance {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 2px solid #fd79a8;
+        }
+        
+        .importance h2 {
+            color: #e84393;
+            margin-bottom: 35px;
+            text-align: center;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .importance-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .importance-item {
+            flex: 1 1 350px;
+            background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .importance-item:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        }
+        
+        .importance-item h3 {
+            color: #2d3436;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .importance-item p {
+            color: #636e72;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .applications {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 2px solid #00b894;
+        }
+        
+        .applications h2 {
+            color: #00b894;
+            margin-bottom: 35px;
+            text-align: center;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .application-card {
+            background: linear-gradient(135deg, #81ecec 0%, #00cec9 100%);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 206, 201, 0.3);
+            transition: all 0.3s ease;
+            color: #2d3436;
+        }
+        
+        .application-card:hover {
+            transform: translateY(-5px) scale(1.03);
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+        }
+        
+        .application-card h3 {
+            color: inherit;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .gallery {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 2px solid #fdcb6e;
+        }
+        
+        .gallery h2 {
+            color: #e17055;
+            margin-bottom: 35px;
+            text-align: center;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .gallery-item::after {
+            content: attr(data-title);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            transform: translateY(0);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border: 2px solid #e17055;
+        }
+        
+        .conclusion h2 {
+            color: #d63031;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .conclusion p {
+            color: #2d3436;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 5px solid #fdcb6e;
+            border-radius: 30px 30px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .mineral-types, .importance-content {
+                flex-direction: column;
+            }
+            
+            .intro-content {
+                flex-direction: column;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .intro, .classification, .properties, .importance, .gallery {
+                padding: 30px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>أنواع المعادن وأهميتها</h1>
+            <p>استكشف عالم المعادن الرائع وتصنيفاتها واستخداماتها في حياتنا اليومية</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>ما هي المعادن؟</h2>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p>المعدن هو مادة صلبة طبيعية غير عضوية، لها تركيب كيميائي محدد وبناء بلوري داخلي منتظم. تمتاز المعادن بأنها تتكون بشكل طبيعي في الأرض، وتكون في حالة صلبة في درجة حرارة الغرفة، وذراتها مرتبة في نمط متكرر ثلاثي الأبعاد يسمى "البلورة".</p>
+                    <br>
+                    <p>تعتبر المعادن من أهم الثروات الطبيعية التي وهبها الله للإنسان، وتلعب دوراً حيوياً في تطور الحضارات وتقدم البشرية. من خلال دراسة المعادن يمكننا فهم تاريخ الأرض وتطورها عبر العصور الجيولوجية.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsc01.alicdn.com%2Fkf%2FHTB1oa2qx98YBeNkSnb4q6yevFXaO%2F230627170%2FHTB1oa2qx98YBeNkSnb4q6yevFXaO.jpg&f=1&nofb=1&ipt=2cc131b044c95d2ce4dad7f2a139ea22c7763e7ea889831bc494b0c96deaf9a7" alt="كوارتز بلوري">
+                </div>
+            </div>
+        </section>
+
+        <section class="classification">
+            <h2>التصنيف الرئيسي للمعادن</h2>
+            <div class="mineral-types">
+                <div class="mineral-card silicates">
+                    <h3>معادن السيليكات</h3>
+                    <p>هي المعادن التي تحتوي على عنصري السيليكون والأكسجين في تركيبها الكيميائي، وتشكل حوالي 90% من صخور القشرة الأرضية. تعتبر من أكثر المعادن انتشاراً وأهمية في تكوين الصخور النارية والمتحولة.</p>
+                    <ul>
+                        <li>الكوارتز (SiO₂) - الأكثر مقاومة للتجوية</li>
+                        <li>الفلسبار - يشكل 60% من القشرة الأرضية</li>
+                        <li>المايكا - معادن صفائحية تظهر انفصاماً واضحاً</li>
+                        <li>الأمفيبول - معادن سوداء أو خضراء داكنة</li>
+                        <li>البيروكسين - مكون رئيسي للبازلت</li>
+                        <li>الزيوليت - معادن مسامية تستخدم في التنقية</li>
+                    </ul>
+                    <div class="sub-types">
+                        <h4>أهم خصائص معادن السيليكات:</h4>
+                        <p>تتميز بصلادة متوسطة إلى عالية، وتختلف ألوانها حسب الشوائب والعناصر المكونة لها. تستخدم في صناعات الزجاج والسيراميك والإلكترونيات.</p>
+                    </div>
+                </div>
+                
+                <div class="mineral-card non-silicates">
+                    <h3>معادن اللاسيليكات</h3>
+                    <p>هي المعادن التي لا تحتوي على السيليكون والأكسجين معاً في تركيبها الكيميائي، وتنقسم إلى عدة مجموعات حسب الأنيون السائد. تشكل حوالي 10% من معادن القشرة الأرضية ولكنها ذات أهمية اقتصادية كبيرة.</p>
+                    <ul>
+                        <li>الكربونات (كالسيت - دولوميت)</li>
+                        <li>الكبريتات (جبس - أنهيدريت)</li>
+                        <li>الهاليدات (هاليت - فلوريت)</li>
+                        <li>الأكاسيد (هيماتيت - ماجنتيت)</li>
+                        <li>الكبريتيدات (جالينا - بيريت)</li>
+                        <li>العناصر الطبيعية (ذهب - فضة - نحاس)</li>
+                    </ul>
+                    <div class="sub-types">
+                        <h4>مجموعات معادن اللاسيليكات:</h4>
+                        <p>تتنوع خصائصها الفيزيائية والكيميائية بشكل كبير، وتستخدم في العديد من الصناعات مثل البناء، الطب، الإلكترونيات، والمجوهرات.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="properties">
+            <h2>الخواص الفيزيائية للمعادن</h2>
+            <div class="properties-grid">
+                <div class="property-card">
+                    <h3>اللون</h3>
+                    <p>أول خاصية تُلاحظ في المعدن، لكنها ليست دقيقة للتحديد بسبب تأثرها بالشوائب والعوامل الخارجية. بعض المعادن لها ألوان مميزة مثل الأخضر في الملاكيت والأزرق في الأزوريت.</p>
+                </div>
+                <div class="property-card">
+                    <h3>البريق</h3>
+                    <p>مظهر سطح المعدن عند عكس الضوء. ينقسم إلى بريق معدني (كالجالينا) وبريق لامعدني (كالبريق الزجاجي في الكوارتز أو اللؤلؤي في التلك).</p>
+                </div>
+                <div class="property-card">
+                    <h3>الصلادة</h3>
+                    <p>مقاومة المعدن للخدش، وتقاس بمقياس موس من 1 (التلك) إلى 10 (الألماس). تعتبر الصلادة من أكثر الخصائص موثوقية في تحديد المعادن.</p>
+                </div>
+                <div class="property-card">
+                    <h3>الانفصام</h3>
+                    <p>الميل للكسر حسب مستويات ضعف في البناء البلوري. بعض المعادن تنفصم في مستويات واضحة مثل المايكا، والبعض الآخر لا ينفصم مثل الكوارتز.</p>
+                </div>
+                <div class="property-card">
+                    <h3>الوزن النوعي</h3>
+                    <p>نسبة كثافة المعدن إلى كثافة الماء. يتراوح بين 2-3 لمعظم المعادن الشائعة، ويرتفع إلى 19 للذهب الخالص. يساعد في التمييز بين المعادن المتشابهة.</p>
+                </div>
+                <div class="property-card">
+                    <h3>اللون المخدش</h3>
+                    <p>لون مسحوق المعدن، وهو أكثر ثباتاً من لون المعدن نفسه. يتم تحديده بخدش المعدن على لوح من الخزف الأبيغ.</p>
+                </div>
+                <div class="property-card">
+                    <h3>التماسك</h3>
+                    <p>قوة التماسك بين ذرات المعدن. يحدد طريقة كسر المعدن سواء كان مكسوراً محارياً أو غير منتظم أو terreux.</p>
+                </div>
+                <div class="property-card">
+                    <h3>الشفافية</h3>
+                    <p>قدرة المعدن على نقل الضوء. تتراوح بين شفاف (كالجبس) إلى معتم (كالجالينا). تؤثر على الاستخدامات الصناعية للمعدن.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mohs-scale">
+            <h2>مقياس موس لصلادة المعادن</h2>
+            <table class="scale-table">
+                <thead>
+                    <tr>
+                        <th>الدرجة</th>
+                        <th>المعدن</th>
+                        <th>الاختبار العملي</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>التلك</td>
+                        <td>يخدش بالظفر</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>الجبس</td>
+                        <td>يخدش بالظفر</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>الكالسيت</td>
+                        <td>يخدش بقطعة نقود</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>الفلوريت</td>
+                        <td>يخدش بسكين</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>الأباتيت</td>
+                        <td>يخدش بسكين</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>الفلسبار</td>
+                        <td>يخدش الزجاج</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>الكوارتز</td>
+                        <td>يخدش الزجاج بسهولة</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>التوباز</td>
+                        <td>يخدش الكوارتز</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>الكوراندوم</td>
+                        <td>يخدش التوباز</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>الألماس</td>
+                        <td>يخدش جميع المعادن</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="importance">
+            <h2>أهمية المعادن</h2>
+            <div class="importance-content">
+                <div class="importance-item">
+                    <h3>الأهمية الاقتصادية</h3>
+                    <p>المعادن أساس الصناعة الحديثة والتجارة العالمية. تدخل في صناعة السيارات، الأجهزة الإلكترونية، المجوهرات، والعملات. تشكل عائدات تصدير المعادن جزءاً كبيراً من اقتصاد العديد من الدول. تعتمد البورصات العالمية على أسعار المعادن مثل الذهب والفضة والنحاس كمؤشرات اقتصادية مهمة.</p>
+                </div>
+                <div class="importance-item">
+                    <h3>الأهمية الصناعية</h3>
+                    <p>تستخدم المعادن في جميع القطاعات الصناعية: الحديد للبناء، النحاس للأسلاك الكهربائية، الألومنيوم للطائرات، السيليكون للإلكترونيات، والكوارتز للزجاج والإلكترونيات. تدخل المعادن في صناعة الآلات، المعدات الطبية، مواد البناء، ووسائل النقل.</p>
+                </div>
+                <div class="importance-item">
+                    <h3>الأهمية العلمية</h3>
+                    <p>تعطي المعادن معلومات قيمة عن تاريخ الأرض وتطورها. دراسة البلورات المعدنية ساعدت في فهم البناء الذري للمواد. تستخدم خواص المعادن في تطوير مواد جديدة. تساعد في فهم العمليات الجيولوجية والمناخ القديم.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="applications">
+            <h2>التطبيقات العملية للمعادن</h2>
+            <div class="applications-grid">
+                <div class="application-card">
+                    <h3>البناء والتشييد</h3>
+                    <p>الحديد والأسمنت (من الحجر الجيري) والألمنيوم والجبس تستخدم في المباني والجسور والطرق.</p>
+                </div>
+                <div class="application-card">
+                    <h3>الطاقة</h3>
+                    <p>اليورانيوم للطاقة النووية، السيليكون للألواح الشمسية، النحاس للأسلاك الكهربائية.</p>
+                </div>
+                <div class="application-card">
+                    <h3>الطب</h3>
+                    <p>الفضة مضادة للبكتيريا، التيتانيوم للمفاصل الصناعية، الجبس للجبائر.</p>
+                </div>
+                <div class="application-card">
+                    <h3>التكنولوجيا</h3>
+                    <p>السيليكون للرقائق الإلكترونية، الذهب للوحات الدوائر، النيوديميوم للمغناطيسات.</p>
+                </div>
+                <div class="application-card">
+                    <h3>الزراعة</h3>
+                    <p>الفوسفات للأسمدة، الكبريت لتحسين التربة، الجبس لتحسين خواص التربة.</p>
+                </div>
+                <div class="application-card">
+                    <h3>النقل</h3>
+                    <p>الألمنيوم للطائرات، الحديد للسكك الحديدية، البلاتين لمحولات العادم.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <h2>معرض الصور المعدنية</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-title="كوارتز بلوري" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsc01.alicdn.com%2Fkf%2FHTB1oa2qx98YBeNkSnb4q6yevFXaO%2F230627170%2FHTB1oa2qx98YBeNkSnb4q6yevFXaO.jpg&f=1&nofb=1&ipt=2cc131b044c95d2ce4dad7f2a139ea22c7763e7ea889831bc494b0c96deaf9a7')"></div>
+                <div class="gallery-item" data-title="فلسبار وردي" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.D0MCnSpSBYTar0B4vjK0YgHaE8%3Fcb%3D12%26pid%3DApi&f=1&ipt=a677b9efc3bfa27da4867f66a95e772e3c979ce79cade1180b8e5e6ed13c22f7')"></div>
+                <div class="gallery-item" data-title="ذهب خام" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmediaaws.almasryalyoum.com%2Fnews%2Fverylarge%2F2020%2F09%2F02%2F1294949_0.jpg&f=1&nofb=1&ipt=53d962375077569daeed2d2eff82e170c795556c2cd233f9d5e1886c3dfc8ad2')"></div>
+                <div class="gallery-item" data-title="هيماتيت" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F19%2FWLA_hmns_Hematite.jpg%2F800px-WLA_hmns_Hematite.jpg&f=1&nofb=1&ipt=edb9f8639f29538e3eb47760260db97eba9bb9038d47e10a1085c5e9cca50c38')"></div>
+                <div class="gallery-item" data-title="كالسيت شفاف" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdamasoil.com%2Fwp-content%2Fuploads%2F2019%2F08%2F45-3.jpg&f=1&nofb=1&ipt=819045d33fe3a8c0d2cc1e44b96d1292ef42bee634227fc1ecff0ce1ce9e5369')"></div>
+                <div class="gallery-item" data-title="جالينا" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.meteorologiaenred.com%2Fwp-content%2Fuploads%2F2019%2F10%2FEstructura-de-la-galena.jpg&f=1&nofb=1&ipt=39b8faa3b51e46110b2f86be68d0540e8a28a20487d6d4ebe511140eeb4b1f6a')"></div>
+                <div class="gallery-item" data-title="ملاكيت أخضر" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.gemselect.com%2Fphotos%2Fmalachite%2Fmalachite-gem-668999a.jpg&f=1&nofb=1&ipt=ddbc7bfe2ce5f8fa258044b0358410170e671cbabc5b85d345a7d920e3fc7544')"></div>
+                <div class="gallery-item" data-title="أزوريت أزرق" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Azurite_from_China.jpg/330px-Azurite_from_China.jpg')"></div>
+                <div class="gallery-item" data-title="بيريت ذهبي" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.zid.store%2Fthumbs%2F6b80aec8-0cdb-4ff4-9f30-19d1328f3264%2Fcf292c7b-b027-49cf-927d-3698faf8fbf4-thumbnail-770x770-70.jpg&f=1&nofb=1&ipt=c44e13ad7685ceae34861b8657d3431a4e47f5dc8ea16c1b029a5bd4b028aa4a')"></div>
+                <div class="gallery-item" data-title="فلوريت متعدد الألوان" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F64.media.tumblr.com%2F35503054df4f2dbbcee18dbe669ebbf8%2Ftumblr_n9r6e1ia8A1rjxhlko1_640.jpg&f=1&nofb=1&ipt=5c66846949675976bb29ed9a9eccd3198bd6ec3549f11917179b4579f464d081')"></div>
+                <div class="gallery-item" data-title="أباتيت أزرق" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsouqisagha.com%2Fwp-content%2Fuploads%2F2023%2F01%2F%25D8%25A7%25D8%25B3%25D9%2585%25D8%25A7%25D8%25A1-%25D8%25A7%25D8%25AD%25D8%25AC%25D8%25A7%25D8%25B1-%25D9%2583%25D8%25B1%25D9%258A%25D9%2585%25D8%25A9-%25D8%25B2%25D8%25B1%25D9%2582%25D8%25A7%25D8%25A1-1.webp&f=1&nofb=1&ipt=b1052c7305bc4cf74c5ec16c8bdc8f3443dbdcbc136c482a1c70e74912c444bd')"></div>
+                <div class="gallery-item" data-title="توباز أصفر" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FOGKZuSNPEnw%2Fhqdefault.jpg%3Fsqp%3D-oaymwEmCOADEOgC8quKqQMa8AEB-AH-DoACuAiKAgwIABABGFUgXihlMA8%3D%26rs%3DAOn4CLDyMscW60dpP2nWeMDUOJbW0pgiqw&f=1&nofb=1&ipt=a63c52537a808d5b21fdf9d1d78482b02e6f83ca7b625f1f05d1f8f28c2f0dd0')"></div>
+            </div>
+        </section>
+
+        <section class="conclusion">
+            <h2>خاتمة</h2>
+            <p>تشكل المعادن العمود الفقري للصناعة الحديثة والحضارة البشرية. من خلال فهم أنواع المعادن وخصائصها وأهميتها، يمكننا الاستفادة بشكل أفضل من هذه الثروات الطبيعية واستغلالها بشكل مستدام للأجيال القادمة. تبقى دراسة المعادن مجالاً حيوياً للبحث العلمي والابتكار التكنولوجي، حيث لا تزال الاكتشافات الجديدة والتطبيقات المبتكرة تظهر باستمرار في هذا المجال المثير.</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+</body>
+</html>
